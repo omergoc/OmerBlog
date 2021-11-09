@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "EducationUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Eğitim Güncelle</h2>
+    <form method="post" action="">
+        <div class="form-group">
+            <label>Eğitim Başlık</label>
+            <input type="text" maxlength="100" name="EgitimBaslik" required="" class="form-control" value="@ViewBag.baslik" />
+        </div>
+        <div class="form-group">
+            <label>Eğitim Alt Başlık</label>
+            <input type="text" maxlength="100" name="EgitimAltBaslik" required="" class="form-control" value="@ViewBag.altbaslik" />
+        </div>
+        <div class="form-group">
+            <label>Başlangıc</label>
+            <input type="date" name="EgitimBaslangic" required="" class="form-control" value="@ViewBag.baslangic" />
+        </div>
+        <div class="form-group">
+            <label>Bitiş</label>
+            <input type="date" name="EgitimBitis" required="" class="form-control" value="@ViewBag.bitis" />
+        </div>
+        <div class="form-group">
+            <label>Eğitim Detay</label>
+            <textarea class="form-control" maxlength="500" required="" name="EgitimDetay">@ViewBag.detay</textarea>
+        </div>
+        <input type="submit" value="Eğitim Güncelle" class="form-control btn btn-primary" />
+    </form>
+</div>
+
+

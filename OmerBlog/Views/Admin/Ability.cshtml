@@ -1,0 +1,39 @@
+﻿@using OmerBlog.Models
+@model List<TblYetenekler>
+@{
+    ViewData["Title"] = "Ability";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-6 mx-auto">
+    <h2 class="text-center">Yetenek Ekle</h2>
+    <form method="post" action="/Admin/Ability">
+        <div class="form-group">
+            <label>Yetenek Adı</label>
+            <input type="text" required="" name="YetenekAd" class="form-control" />
+        </div>
+        <input type="submit" maxlength="100" value="Yetenek Ekle" class="form-control btn btn-success" />
+    </form>
+    <br /><br />
+    <h2 class="text-center">Yetenekler Listesi</h2>
+    <br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Ad</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.YetenekId</th>
+                    <td>@item.YetenekAd</td>
+                    <td><a href="/Admin/AbilityDelete/@item.YetenekId" class="btn btn-danger">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "UsersUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Kullanıcı Güncelle</h2>
+    <form method="post" action="">
+        <div class="form-group">
+            <label>E-Posta</label>
+            <input type="email" maxlength="50" required="" name="AdminEmail" class="form-control" value="@ViewBag.email" />
+        </div>
+        <div class="form-group">
+            <label>Adı Soyadı</label>
+            <input type="text" maxlength="50" required="" name="AdminAd" class="form-control" value="@ViewBag.ad" />
+        </div>
+        <div class="form-group">
+            <label>Şifre</label>
+            <input type="password" required="" maxlength="100" name="AdminPassword" class="form-control" value="@ViewBag.sifre" />
+        </div>
+        <input type="submit" value="Kullanıcı Güncelle" class="form-control btn btn-success" />
+    </form>
+</div>

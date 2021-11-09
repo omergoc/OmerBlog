@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "License";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Lisans Ekle</h2>
+    <form method="post" action="">
+        <div class="form-group">
+            <label>Lisans Sahibi</label>
+            <input type="text" required="" maxlength="50" name="LisansSahibi" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Site</label>
+            <input type="text" required=""maxlength="100" name="LisansSite" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Başlangıç</label>
+            <input type="date" required="" name="LisansBaslangic" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Bitiş</label>
+            <input type="date" required="" name="LisansBitis" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Kodu</label>
+            <input type="text" required=""maxlength="50" name="LisansKod" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Not</label>
+            <textarea class="form-control"maxlength="500" name="LisansNot"></textarea>
+        </div>
+        <input type="submit" value="Lisans Ekle" class="form-control btn btn-success" />
+    </form>
+</div>
+
+

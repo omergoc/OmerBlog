@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Education";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Eğitim Ekle</h2>
+    <form method="post" action="/Admin/Education">
+        <div class="form-group">
+            <label>Eğitim Başlık</label>
+            <input type="text" required="" maxlength="100" name="EgitimBaslik" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Eğitim Alt Başlık</label>
+            <input type="text" required="" maxlength="100" name="EgitimAltBaslik" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Başlangıc</label>
+            <input type="date" required=""  name="EgitimBaslangic" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Bitiş</label>
+            <input type="date" required="" name="EgitimBitis" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Eğitim Detay</label>
+            <textarea class="form-control" maxlength="500" required="" name="EgitimDetay"></textarea>
+        </div>
+        <input type="submit" value="Eğitim Ekle" class="form-control btn btn-success" />
+    </form>
+</div>
+

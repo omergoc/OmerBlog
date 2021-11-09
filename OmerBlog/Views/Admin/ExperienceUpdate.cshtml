@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "ExperienceUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Deneyim Güncelle</h2>
+    <form method="post" action="">
+        <div class="form-group">
+            <label>Deneyim Başlık</label>
+            <input type="hidden" value="@ViewBag.id" />
+            <input type="text" name="DeneyimBaslik"maxlength="80" required="" class="form-control" value="@ViewBag.baslik" />
+        </div>
+        <div class="form-group">
+            <label>Deneyim Alt Başlık</label>
+            <input type="text" name="DeneyimAltBaslik" maxlength="80" required="" class="form-control" value="@ViewBag.altbaslik" />
+        </div>
+        <div class="form-group">
+            <label>Başlangıc</label>
+            <input type="date" name="DeneyimBaslangic" required="" class="form-control" value="@ViewBag.baslangic"/>
+        </div>
+        <div class="form-group">
+            <label>Bitiş</label>
+            <input type="date" name="DeneyimBitis" required="" class="form-control" value="@ViewBag.bitis"/>
+        </div>
+        <div class="form-group">
+            <label>Deneyim Detay</label>
+            <textarea class="form-control" required="" maxlength="500" name="DeneyimDetay">@ViewBag.detay</textarea>
+        </div>
+        <input type="submit" value="Deneyim Güncelle" class="form-control btn btn-primary" />
+    </form>
+</div>

@@ -1,0 +1,38 @@
+﻿@using OmerBlog.Models
+@model List<TblDeneyimler>
+@{
+    ViewData["Title"] = "ExperienceList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Deneyimler Listesi</h1>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Alt Başlık</th>
+            <th scope="col">Detay</th>
+            <th scope="col">Baslangiç</th>
+            <th scope="col">Bitiş</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.DeneyimId</th>
+            <td>@item.DeneyimBaslik</td>
+            <td>@item.DeneyimAltBaslik</td>
+            <td>@item.DeneyimDetay</td>
+            <td>@item.DeneyimBaslangic</td>
+            <td>@item.DeneyimBitis</td>
+            <td><a href="/Admin/ExperienceDelete/@item.DeneyimId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/ExperienceUpdate/@item.DeneyimId" class="btn btn-info">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>

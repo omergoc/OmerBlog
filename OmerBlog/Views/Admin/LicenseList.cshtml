@@ -1,0 +1,40 @@
+﻿@using OmerBlog.Models
+@model List<TblLisans>
+@{
+    ViewData["Title"] = "LicenseList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Lisans Listesi</h1>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Lisans Sahibi</th>
+            <th scope="col">Lisans Site</th>
+            <th scope="col">Baslangıç</th>
+            <th scope="col">Bitiş</th>
+            <th scope="col">Lisans Kod</th>
+            <th scope="col">Not</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.LisansId</th>
+                <td>@item.LisansSahibi</td>
+                <td>@item.LisansSite</td>
+                <td>@item.LisansBaslangic</td>
+                <td>@item.LisansBitis</td>
+                <td>@item.LisansKod</td>
+                <td>...</td>
+                <td><a href="/Admin/LicenseDelete/@item.LisansId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Admin/LicenseUpdate/@item.LisansId" class="btn btn-info">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

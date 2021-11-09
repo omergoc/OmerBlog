@@ -1,0 +1,64 @@
+﻿@using OmerBlog.Models
+@model List<TblAdmin>
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var deger = ViewBag.islem;
+}
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Kullanıcı Ekle</h2>
+    <form method="post" action="">
+        @if (deger == null)
+        { }
+        else
+        {<div class="alert alert-danger" role="alert">
+                E-Posta Kullanılmakta
+            </div>
+        }
+        <div class="form-group">
+            <label>E-Posta</label>
+            <input type="email" required="" maxlength="50" name="AdminEmail" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Adı Soyadı</label>
+            <input type="text" maxlength="50" required="" name="AdminAd" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Şifre</label>
+            <input type="password" maxlength="100" required="" name="AdminPassword" class="form-control" />
+        </div>
+        <input type="submit" value="Kullanıcı Ekle" class="form-control btn btn-success" />
+    </form>
+    <br />
+    <h2 class="text-center">Kullancı Listesi</h2>
+    <br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Ad Soyad</th>
+                <th scope="col">E-Posta</th>
+                <th scope="col">Şifre</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.AdminId</th>
+                    <td>@item.AdminAd</td>
+                    <td>@item.AdminEmail</td>
+                    <td>@item.AdminPassword</td>
+                    <td><a href="/Admin/UsersDelete/@item.AdminId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Admin/UsersUpdate/@item.AdminId" class="btn btn-info">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>

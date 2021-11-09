@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "LicenseUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-8 mx-auto">
+    <h2 class="text-center">Lisans Güncelle</h2>
+    <form method="post" action="">
+        <div class="form-group">
+            <label>Lisans Sahibi</label>
+            <input type="text" name="LisansSahibi" maxlength="50" required="" class="form-control"value="@ViewBag.sahibi" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Site</label>
+            <input type="text" name="LisansSite" maxlength="100" required="" class="form-control" value="@ViewBag.site" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Başlangıç</label>
+            <input type="date" name="LisansBaslangic" required="" class="form-control" value="@ViewBag.baslangic" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Bitiş</label>
+            <input type="date" name="LisansBitis" required="" class="form-control" value="@ViewBag.bitis" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Kodu</label>
+            <input type="text" name="LisansKod"maxlength="50" required="" class="form-control" value="@ViewBag.kod" />
+        </div>
+        <div class="form-group">
+            <label>Lisans Not</label>
+            <textarea class="form-control" maxlength="500" name="LisansNot">@ViewBag.not</textarea>
+        </div>
+        <input type="submit" value="Lisans Güncelle" class="form-control btn btn-primary" />
+    </form>
+</div>
+

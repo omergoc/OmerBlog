@@ -1,0 +1,41 @@
+﻿@using OmerBlog.Models
+@model List<TblProjeler> 
+@{
+    ViewData["Title"] = "ProjectList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Proje Listesi</h1>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Alt Başlık</th>
+            <th scope="col">Detay</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Resim-1</th>
+            <th scope="col">Resim-2</th>
+            <th scope="col">Resim-3</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ProjeId</th>
+            <td>@item.ProjeBaslik</td>
+            <td>@item.ProjeAltBaslik</td>
+            <td>@item.ProjeDetay</td>
+            <td>@item.ProjeTarih</td>
+            <td>@item.ProjeResim1</td>
+            <td>@item.ProjeResim2</td>
+            <td>@item.ProjeResim3</td>
+            <td><a href="/Admin/ProjectDelete/@item.ProjeId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/ProjectUpdate/@item.ProjeId" class="btn btn-info">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
